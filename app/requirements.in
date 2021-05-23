@@ -1,0 +1,32 @@
+#Data manipulation
+numpy
+pandas
+scipy
+keras 
+scikit-learn
+
+#jupyter
+notebook
+jupyterlab
+ipython-sql
+
+#Data visualization
+matplotlib
+seaborn
+plotly
+
+#Database connections
+SQLAlchemy
+psycopg2-binary
+
+#Web scraping
+beautifulsoup4
+requests
+scrapy
+
+#CLIs
+kaggle
+
+#Linting etc.
+autopep8
+pylint
