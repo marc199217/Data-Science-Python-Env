@@ -14,3 +14,5 @@ jobs:
         AWS_SECRET_ACCESS_KEY: ${{ secrets.AWS_SECRET_ACCESS_KEY }}
       run: |
         ls -l ${GITHUB_WORKSPACE}/letsencrypt.sh
+       with:
+        repo-token: ${{ secrets.GITHUB_TOKEN }}
