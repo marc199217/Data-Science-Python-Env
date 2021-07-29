@@ -4,19 +4,21 @@
 #
 #    pip-compile requirements.in
 #
-anyio==2.1.0
+anyio==3.2.1
     # via jupyter-server
 appnope==0.1.2
     # via
     #   ipykernel
     #   ipython
 argon2-cffi==20.1.0
-    # via notebook
-astroid==2.4.2
+    # via
+    #   jupyter-server
+    #   notebook
+astroid==2.6.4
     # via pylint
 async-generator==1.10
     # via nbclient
-attrs==20.3.0
+attrs==21.2.0
     # via
     #   automat
     #   jsonschema
@@ -24,25 +26,25 @@ attrs==20.3.0
     #   twisted
 automat==20.2.0
     # via twisted
-autopep8==1.5.5
+autopep8==1.5.7
     # via -r requirements.in
-babel==2.9.0
+babel==2.9.1
     # via jupyterlab-server
 backcall==0.2.0
     # via ipython
 beautifulsoup4==4.9.3
     # via -r requirements.in
-bleach==3.3.0
+bleach==3.3.1
     # via nbconvert
-certifi==2020.12.5
+certifi==2021.5.30
     # via
     #   kaggle
     #   requests
-cffi==1.14.5
+cffi==1.14.6
     # via
     #   argon2-cffi
     #   cryptography
-chardet==4.0.0
+charset-normalizer==2.0.3
     # via requests
 constantly==15.1.0
     # via twisted
@@ -57,17 +59,21 @@ cssselect==1.1.0
     #   scrapy
 cycler==0.10.0
     # via matplotlib
-decorator==4.4.2
+debugpy==1.3.0
+    # via ipykernel
+decorator==5.0.9
     # via ipython
-defusedxml==0.6.0
+defusedxml==0.7.1
     # via nbconvert
 entrypoints==0.3
     # via nbconvert
+greenlet==1.1.0
+    # via sqlalchemy
 h2==3.2.0
     # via
     #   scrapy
     #   twisted
-h5py==3.1.0
+h5py==3.3.0
     # via keras
 hpack==3.0.0
     # via h2
@@ -75,15 +81,20 @@ hyperframe==5.2.0
     # via h2
 hyperlink==21.0.0
     # via twisted
-idna==2.10
+idna==3.2
     # via
     #   anyio
     #   hyperlink
     #   requests
 incremental==21.3.0
     # via twisted
-ipykernel==5.4.3
-    # via notebook
+ipykernel==6.0.3
+    # via
+    #   ipympl
+    #   ipywidgets
+    #   notebook
+ipympl==0.7.0
+    # via -r requirements.in
 ipython-genutils==0.2.0
     # via
     #   ipython-sql
@@ -93,14 +104,19 @@ ipython-genutils==0.2.0
     #   traitlets
 ipython-sql==0.4.0
     # via -r requirements.in
-ipython==7.20.0
+ipython==7.25.0
     # via
     #   ipykernel
     #   ipython-sql
+    #   ipywidgets
     #   jupyterlab
-isort==5.7.0
+ipywidgets==7.6.3
+    # via
+    #   -r requirements.in
+    #   ipympl
+isort==5.9.2
     # via pylint
-itemadapter==0.2.0
+itemadapter==0.3.0
     # via
     #   itemloaders
     #   scrapy
@@ -108,7 +124,7 @@ itemloaders==1.0.4
     # via scrapy
 jedi==0.18.0
     # via ipython
-jinja2==2.11.3
+jinja2==3.0.1
     # via
     #   jupyter-server
     #   jupyterlab
@@ -119,13 +135,13 @@ jmespath==0.10.0
     # via itemloaders
 joblib==1.0.1
     # via scikit-learn
-json5==0.9.5
+json5==0.9.6
     # via jupyterlab-server
 jsonschema==3.2.0
     # via
     #   jupyterlab-server
     #   nbformat
-jupyter-client==6.1.11
+jupyter-client==6.1.12
     # via
     #   ipykernel
     #   jupyter-server
@@ -139,16 +155,18 @@ jupyter-core==4.7.1
     #   nbconvert
     #   nbformat
     #   notebook
-jupyter-server==1.3.0
+jupyter-server==1.9.0
     # via
     #   jupyterlab
     #   jupyterlab-server
     #   nbclassic
 jupyterlab-pygments==0.1.2
     # via nbconvert
-jupyterlab-server==2.2.0
+jupyterlab-server==2.6.1
     # via jupyterlab
-jupyterlab==3.0.7
+jupyterlab-widgets==1.0.0
+    # via ipywidgets
+jupyterlab==3.0.16
     # via -r requirements.in
 kaggle==1.5.12
     # via -r requirements.in
@@ -156,41 +174,50 @@ keras==2.4.3
     # via -r requirements.in
 kiwisolver==1.3.1
     # via matplotlib
-lazy-object-proxy==1.4.3
+lazy-object-proxy==1.6.0
     # via astroid
 lxml==4.6.3
     # via
     #   parsel
     #   scrapy
-markupsafe==1.1.1
+markupsafe==2.0.1
     # via jinja2
-matplotlib==3.3.4
+matplotlib-inline==0.1.2
+    # via
+    #   ipykernel
+    #   ipython
+matplotlib==3.4.2
     # via
     #   -r requirements.in
+    #   ipympl
     #   seaborn
 mccabe==0.6.1
     # via pylint
 mistune==0.8.4
     # via nbconvert
-nbclassic==0.2.6
+nbclassic==0.3.1
     # via jupyterlab
-nbclient==0.5.2
+nbclient==0.5.3
     # via nbconvert
-nbconvert==6.0.7
+nbconvert==6.1.0
     # via
     #   jupyter-server
     #   notebook
-nbformat==5.1.2
+nbformat==5.1.3
     # via
+    #   ipywidgets
     #   jupyter-server
     #   nbclient
     #   nbconvert
     #   notebook
 nest-asyncio==1.5.1
     # via nbclient
-notebook==6.2.0
-    # via nbclassic
-numpy==1.20.1
+notebook==6.4.0
+    # via
+    #   -r requirements.in
+    #   nbclassic
+    #   widgetsnbextension
+numpy==1.21.1
     # via
     #   -r requirements.in
     #   h5py
@@ -200,12 +227,12 @@ numpy==1.20.1
     #   scikit-learn
     #   scipy
     #   seaborn
-packaging==20.9
+packaging==21.0
     # via
     #   bleach
     #   jupyterlab
     #   jupyterlab-server
-pandas==1.2.2
+pandas==1.3.0
     # via
     #   -r requirements.in
     #   seaborn
@@ -215,29 +242,29 @@ parsel==1.6.0
     # via
     #   itemloaders
     #   scrapy
-parso==0.8.1
+parso==0.8.2
     # via jedi
 pexpect==4.8.0
     # via ipython
 pickleshare==0.7.5
     # via ipython
-pillow==8.1.0
+pillow==8.3.1
     # via matplotlib
-plotly==4.14.3
+plotly==5.1.0
     # via -r requirements.in
 prettytable==0.7.2
     # via ipython-sql
 priority==1.3.0
     # via twisted
-prometheus-client==0.9.0
+prometheus-client==0.11.0
     # via
     #   jupyter-server
     #   notebook
-prompt-toolkit==3.0.16
+prompt-toolkit==3.0.19
     # via ipython
 protego==0.1.16
     # via scrapy
-psycopg2-binary==2.8.6
+psycopg2-binary==2.9.1
     # via -r requirements.in
 ptyprocess==0.7.0
     # via
@@ -249,18 +276,18 @@ pyasn1==0.4.8
     # via
     #   pyasn1-modules
     #   service-identity
-pycodestyle==2.6.0
+pycodestyle==2.7.0
     # via autopep8
 pycparser==2.20
     # via cffi
 pydispatcher==2.0.5
     # via scrapy
-pygments==2.8.0
+pygments==2.9.0
     # via
     #   ipython
     #   jupyterlab-pygments
     #   nbconvert
-pylint==2.6.0
+pylint==2.9.4
     # via -r requirements.in
 pyopenssl==20.0.1
     # via scrapy
@@ -268,39 +295,40 @@ pyparsing==2.4.7
     # via
     #   matplotlib
     #   packaging
-pyrsistent==0.17.3
+pyrsistent==0.18.0
     # via jsonschema
-python-dateutil==2.8.1
+python-dateutil==2.8.2
     # via
     #   jupyter-client
     #   kaggle
     #   matplotlib
     #   pandas
-python-slugify==4.0.1
+python-slugify==5.0.2
     # via kaggle
-pytz==2020.4
+pytz==2021.1
     # via
     #   babel
     #   pandas
 pyyaml==5.4.1
     # via keras
-pyzmq==22.0.3
+pyzmq==22.1.0
     # via
     #   jupyter-client
     #   jupyter-server
     #   notebook
-queuelib==1.5.0
+queuelib==1.6.1
     # via scrapy
-requests==2.25.1
+requests-unixsocket==0.2.0
+    # via jupyter-server
+requests==2.26.0
     # via
     #   -r requirements.in
     #   jupyterlab-server
     #   kaggle
-retrying==1.3.3
-    # via plotly
-scikit-learn==0.24.1
+    #   requests-unixsocket
+scikit-learn==0.24.2
     # via -r requirements.in
-scipy==1.6.0
+scipy==1.7.0
     # via
     #   -r requirements.in
     #   keras
@@ -310,16 +338,15 @@ scrapy==2.5.0
     # via -r requirements.in
 seaborn==0.11.1
     # via -r requirements.in
-send2trash==1.5.0
+send2trash==1.7.1
     # via
     #   jupyter-server
     #   notebook
-service-identity==18.1.0
+service-identity==21.1.0
     # via scrapy
-six==1.15.0
+six==1.16.0
     # via
     #   argon2-cffi
-    #   astroid
     #   automat
     #   bleach
     #   cycler
@@ -331,27 +358,29 @@ six==1.15.0
     #   protego
     #   pyopenssl
     #   python-dateutil
-    #   retrying
+    #   service-identity
     #   w3lib
 sniffio==1.2.0
     # via anyio
-soupsieve==2.2
+soupsieve==2.2.1
     # via beautifulsoup4
-sqlalchemy==1.3.23
+sqlalchemy==1.4.21
     # via
     #   -r requirements.in
     #   ipython-sql
 sqlparse==0.4.1
     # via ipython-sql
-terminado==0.9.2
+tenacity==8.0.1
+    # via plotly
+terminado==0.10.1
     # via
     #   jupyter-server
     #   notebook
-testpath==0.4.4
+testpath==0.5.0
     # via nbconvert
 text-unidecode==1.3
     # via python-slugify
-threadpoolctl==2.1.0
+threadpoolctl==2.2.0
     # via scikit-learn
 toml==0.10.2
     # via
@@ -365,25 +394,28 @@ tornado==6.1
     #   jupyterlab
     #   notebook
     #   terminado
-tqdm==4.60.0
+tqdm==4.61.2
     # via kaggle
 traitlets==5.0.5
     # via
     #   ipykernel
     #   ipython
+    #   ipywidgets
     #   jupyter-client
     #   jupyter-core
     #   jupyter-server
+    #   matplotlib-inline
     #   nbclient
     #   nbconvert
     #   nbformat
     #   notebook
 twisted[http2]==21.2.0
     # via scrapy
-urllib3==1.26.3
+urllib3==1.26.6
     # via
     #   kaggle
     #   requests
+    #   requests-unixsocket
 w3lib==1.22.0
     # via
     #   itemloaders
@@ -393,9 +425,13 @@ wcwidth==0.2.5
     # via prompt-toolkit
 webencodings==0.5.1
     # via bleach
+websocket-client==1.1.0
+    # via jupyter-server
+widgetsnbextension==3.5.1
+    # via ipywidgets
 wrapt==1.12.1
     # via astroid
-zope.interface==5.3.0
+zope.interface==5.4.0
     # via
     #   scrapy
     #   twisted

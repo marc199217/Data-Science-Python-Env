@@ -9,6 +9,8 @@ scikit-learn
 notebook
 jupyterlab
 ipython-sql
+ipympl
+ipywidgets
 
 #Data visualization
 matplotlib

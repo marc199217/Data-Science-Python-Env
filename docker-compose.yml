@@ -2,7 +2,7 @@ version: '3.8'
 services:
 
   app:
-    container_name: python_container
+    container_name: ${NAME}
     build:
       context: ./app
       dockerfile: Dockerfile
@@ -10,10 +10,26 @@ services:
     depends_on: 
       - db
     volumes:
-  #   - ./app/dev:/root/.kaggle
-      - app-data:/data
-    # Overrides default command so things don't shut down after the process ends.
-    command: sleep infinity
+      - app-data:/home/marc_nordbruch/data
+      - /Users/marcnordbruch/Downloads/letsencrypt:/etc/letsencrypt
+    ports:
+      - "10000:8888"
+    command: >
+      start-notebook.sh 
+      --NotebookApp.password=${JUPYTER_PASSWORD} 
+      --NotebookApp.base_url=/
+      --NotebookApp.ip=*
+      --NotebookApp.certfile=/etc/letsencrypt/live/analytics.nordbruch.me/fullchain.pem
+      --NotebookApp.keyfile=//etc/letsencrypt/live/analytics.nordbruch.me/privkey.pem
+    user: root
+    environment:
+      NB_USER: "marc_nordbruch"
+      NB_UID: 1010
+      NB_GID: 1020
+      CHOWN_HOME: "yes"
+      CHOWN_HOME_OPTS: "-R"
+      USE_HTTPS: "yes"
+      
     networks: 
       - backend-network
       - frontend-network
@@ -57,3 +73,4 @@ volumes:
     app-data:
     db-data:
     pgadmin:
+    secrets:
