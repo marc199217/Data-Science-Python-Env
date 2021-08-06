@@ -14,5 +14,5 @@ jobs:
         AWS_SECRET_ACCESS_KEY: ${{ secrets.AWS_SECRET_ACCESS_KEY }}
       run: |
         ls -R
-        chmod +x letsencrypt.sh
-        sh letsencrypt.sh
+        chmod +x ./scripts/letsencrypt.sh
+        sh ./scripts/letsencrypt.sh
