@@ -18,5 +18,3 @@ jobs:
         ls -R
         chmod +rx ./scripts/letsencrypt.sh
         ls -l ./scripts/letsencrypt.sh
-    - name: run script
-      run: ./scripts/letsencrypt.sh
