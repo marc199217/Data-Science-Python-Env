@@ -15,4 +15,4 @@ jobs:
         AWS_SECRET_ACCESS_KEY: ${{ secrets.AWS_SECRET_ACCESS_KEY }}
       run: |
         ls -R
-        ./scripts/letsencrypt.sh
+        sudo ./scripts/letsencrypt.sh
