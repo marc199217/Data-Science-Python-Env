@@ -17,3 +17,4 @@ jobs:
         ls -R
         chmod u+r+x ./scripts/letsencrypt.sh
         ls -l ./scripts/letsencrypt.sh
+        ./scripts/letsencrypt.sh
