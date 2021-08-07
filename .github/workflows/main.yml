@@ -13,5 +13,7 @@ jobs:
     steps:
     - uses: actions/checkout@v2
     - name: script
-      run: ./scripts/letsencrypt.sh
+      run: | 
+           chmod +x ./scripts/letsencrypt.sh
+           ./scripts/letsencrypt.sh
       shell: bash
