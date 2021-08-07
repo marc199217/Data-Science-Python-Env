@@ -11,10 +11,9 @@ jobs:
         AWS_ACCESS_KEY_ID: ${{ secrets.AWS_ACCESS_KEY_ID }}
         AWS_SECRET_ACCESS_KEY: ${{ secrets.AWS_SECRET_ACCESS_KEY }}
     steps:
-     - name: GitHub Script
-       uses: actions/github-script@v4.0.2
-       with:
-        # The script to run
-        script: letsencrypt.sh
-        debug: true
-        result-encoding: string
+    - uses: actions/checkout@v2
+    - name: script
+        run: ./scripts/letsencrypt.sh
+        shell: bash
+        with:
+          password: ${{ secrets.ACCESS_TOKEN }}
