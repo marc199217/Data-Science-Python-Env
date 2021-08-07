@@ -7,13 +7,10 @@ on:
 jobs:
   secrets-in-github-actions:
     runs-on: ubuntu-latest
-    steps:
-     - env:
+    env:
         AWS_ACCESS_KEY_ID: ${{ secrets.AWS_ACCESS_KEY_ID }}
         AWS_SECRET_ACCESS_KEY: ${{ secrets.AWS_SECRET_ACCESS_KEY }}
-     - name: Check out repository code
-       uses: actions/checkout@v2
-     - run: echo "🍏 This job's status is ${{ job.status }}."
+    steps:
      - name: GitHub Script
        uses: actions/github-script@v4.0.2
        with:
