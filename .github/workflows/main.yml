@@ -8,13 +8,14 @@ jobs:
   secrets-in-github-actions:
     runs-on: ubuntu-latest
     steps:
-    - shell: "bash -c {0}"
-    - env:
+     - shell: "bash -c {0}"
+     - env:
         AWS_ACCESS_KEY_ID: ${{ secrets.AWS_ACCESS_KEY_ID }}
         AWS_SECRET_ACCESS_KEY: ${{ secrets.AWS_SECRET_ACCESS_KEY }}
-    - name: run shell script
-      uses: actions/checkout@v2
-    - run: |
+     - name: Check out repository code
+       uses: actions/checkout@v2
+     - run: |
         ls -R
         chmod +rx ./scripts/letsencrypt.sh
         ls -l ./scripts/letsencrypt.sh
+     - run: echo "🍏 This job's status is ${{ job.status }}."
