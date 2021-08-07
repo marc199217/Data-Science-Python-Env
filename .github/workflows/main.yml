@@ -15,4 +15,4 @@ jobs:
        uses: actions/github-script@v4.0.2
        with:
         # The script to run
-        script: ./scripts/letsencrypt.sh
+        script: letsencrypt.sh
