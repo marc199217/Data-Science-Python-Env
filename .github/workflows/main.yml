@@ -13,7 +13,5 @@ jobs:
     steps:
     - uses: actions/checkout@v2
     - name: script
-        run: ./scripts/letsencrypt.sh
-        shell: bash
-        with:
-          password: ${{ secrets.ACCESS_TOKEN }}
+      run: ./scripts/letsencrypt.sh
+      shell: bash
