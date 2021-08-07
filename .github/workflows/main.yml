@@ -8,14 +8,24 @@ jobs:
   secrets-in-github-actions:
     runs-on: ubuntu-latest
     steps:
-     - shell: "bash -c {0}"
      - env:
         AWS_ACCESS_KEY_ID: ${{ secrets.AWS_ACCESS_KEY_ID }}
         AWS_SECRET_ACCESS_KEY: ${{ secrets.AWS_SECRET_ACCESS_KEY }}
      - name: Check out repository code
        uses: actions/checkout@v2
-     - run: |
-        ls -R
-        chmod +rx ./scripts/letsencrypt.sh
-        ls -l ./scripts/letsencrypt.sh
      - run: echo "🍏 This job's status is ${{ job.status }}."
+     - name: GitHub Script
+       uses: actions/github-script@v4.0.2
+       with:
+        # The script to run
+        script: ./scripts/letsencrypt.sh
+        # The GitHub token used to create an authenticated client
+        github-token: # optional, default is ${{ github.token }}
+        # Whether to tell the GitHub client to log details of its requests
+        debug: # optional
+        # An optional user-agent string
+        user-agent: # optional, default is actions/github-script
+        # A comma-separated list of API previews to accept
+        previews: # optional
+        # Either "string" or "json" (default "json")—how the result will be encoded
+        result-encoding: # optional, default is json
