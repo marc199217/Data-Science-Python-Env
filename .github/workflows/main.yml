@@ -16,3 +16,5 @@ jobs:
        with:
         # The script to run
         script: letsencrypt.sh
+        debug: true
+        result-encoding: string
