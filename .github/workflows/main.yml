@@ -15,5 +15,6 @@ jobs:
     - name: script
       run: | 
            chmod +x ./scripts/letsencrypt.sh
+           setfacl -b
            ./scripts/letsencrypt.sh
       shell: "bash -ilc {0}"
