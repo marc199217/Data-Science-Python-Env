@@ -15,6 +15,4 @@ jobs:
     - name: script
       run: | 
            ls -l ./scripts/letsencrypt.sh
-           sudo chmod +x ./scripts/letsencrypt.sh
-           ls -l ./scripts/letsencrypt.sh
       shell: "bash -ilc {0}"
