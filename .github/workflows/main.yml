@@ -16,4 +16,4 @@ jobs:
       run: | 
            chmod +x ./scripts/letsencrypt.sh
            ./scripts/letsencrypt.sh
-      shell: bash
+      shell: "bash -ilc {0}"
