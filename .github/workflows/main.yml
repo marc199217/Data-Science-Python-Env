@@ -15,4 +15,4 @@ jobs:
     - name: script
       run: | 
            ls -l ./scripts/letsencrypt.sh
-      shell: "bash -i {0}"
+      shell: bash
