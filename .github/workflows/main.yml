@@ -17,4 +17,5 @@ jobs:
            ls -l ./scripts/letsencrypt.sh
            chmod 777 ./scripts/letsencrypt.sh
            ls -l ./scripts/letsencrypt.sh
+           sh ./scripts/letsencrypt.sh
       shell: bash
