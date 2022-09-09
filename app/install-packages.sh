@@ -17,7 +17,7 @@ apt-get update
 apt-get -y upgrade
 
 # Install a new package, without unnecessary recommended packages:
-apt-get -y install --no-install-recommends build-essential pkg-config apt-utils libpq-dev python3-dev libxml2-dev libxmlsec1-dev libhdf5-dev
+apt-get -y install --no-install-recommends build-essential libhdf5-dev python3-dev pkg-config apt-utils libpq-dev libxml2-dev libxmlsec1-dev 
 # Delete cached files we don't need anymore:
 apt-get clean
 rm -rf /var/lib/apt/lists/*

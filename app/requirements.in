@@ -1,8 +1,14 @@
 #Data manipulation
 numpy
 pandas
+
+#statistics
 scipy
-keras 
+statsmodels
+pingouin
+
+#machine learning
+keras
 scikit-learn
 
 #jupyter
@@ -20,6 +26,7 @@ plotly
 #Database connections
 SQLAlchemy
 psycopg2-binary
+pandasql
 
 #Web scraping
 beautifulsoup4

@@ -10,7 +10,7 @@ services:
     depends_on: 
       - db
     volumes:
-      - app-data:/home/marc_nordbruch/data
+      - app-data:/home/${NB_USER}/data
       - /Users/marcnordbruch/Downloads/letsencrypt:/etc/letsencrypt
     ports:
       - "10000:8888"
@@ -19,16 +19,18 @@ services:
       --NotebookApp.password=${JUPYTER_PASSWORD} 
       --NotebookApp.base_url=/
       --NotebookApp.ip=*
-      --NotebookApp.certfile=/etc/letsencrypt/live/analytics.nordbruch.me/fullchain.pem
-      --NotebookApp.keyfile=//etc/letsencrypt/live/analytics.nordbruch.me/privkey.pem
+      --NotebookApp.certfile=/etc/letsencrypt/live/${LETSENCRYPT_FQDN}/fullchain.pem
+      --NotebookApp.keyfile=/etc/letsencrypt/live/${LETSENCRYPT_FQDN}/privkey.pem
     user: root
     environment:
-      NB_USER: "marc_nordbruch"
-      NB_UID: 1010
-      NB_GID: 1020
+      NB_USER: ${NB_USER}
+      NB_UID: 501
+      NB_GID: 20
       CHOWN_HOME: "yes"
       CHOWN_HOME_OPTS: "-R"
+      GRANT_SUDO: "yes"
       USE_HTTPS: "yes"
+      w: /home/${NB_USER}
       
     networks: 
       - backend-network
@@ -74,3 +76,4 @@ volumes:
     db-data:
     pgadmin:
     secrets:
+        name: ${SECRETS_VOLUME}

@@ -14,4 +14,3 @@ export NAME
 # Container secrets volume name
 : "${SECRETS_VOLUME:=${NAME}-secrets}"
 export SECRETS_VOLUME
-
