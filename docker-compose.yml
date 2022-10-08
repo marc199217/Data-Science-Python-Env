@@ -19,8 +19,8 @@ services:
       --NotebookApp.password=${JUPYTER_PASSWORD} 
       --NotebookApp.base_url=/
       --NotebookApp.ip=*
-      --NotebookApp.certfile=/etc/letsencrypt/live/${LETSENCRYPT_FQDN}/fullchain.pem
-      --NotebookApp.keyfile=/etc/letsencrypt/live/${LETSENCRYPT_FQDN}/privkey.pem
+#      --NotebookApp.certfile=/etc/letsencrypt/live/${LETSENCRYPT_FQDN}/fullchain.pem
+#      --NotebookApp.keyfile=/etc/letsencrypt/live/${LETSENCRYPT_FQDN}/privkey.pem
     user: root
     environment:
       NB_USER: ${NB_USER}
